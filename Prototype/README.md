@@ -1,4 +1,4 @@
-URL Link to the Healthezz Website: https://titan.csit.rmit.edu.au/~s4003460/assignment-2-website-prototype-group_7_wps_2024/Prototype/HTML/Homepage.html
+URL Link to the Healthezz Website: https://saturn.csit.rmit.edu.au/~s4037818/assignment-3-final-website-group_7_wps_2024/Prototype/HTML/Homepage.php
 This link will take you to the Landing Page.
 
 What is Healthezz?
