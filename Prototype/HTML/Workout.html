@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../CSS/Homepage.css">
+    <link rel="stylesheet" href="../CSS/workout.css">
+    <!--Import Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="Homepage.html"><img src="../logo.png" alt="Logo"></a>
+        <a href="Workout.html"><span>Workouts</span></a>
+        <a href="Dietary.php"><span>Dietary</span></a>
+        <a href="BMICalc.html"><span>BMI</span></a>
+        <a href="Forum.php"><span>Forum</span></a>
+        <a href="Create_Acc.php"><img src="../user.png" alt="Logo"></a>
+    </div>
+
+    <div class="content">
+        <h1>Tailored Exercise Routines</h1>
+        <h2>Select Your Fitness Level</h2>
+        <div class="fitness-levels">
+            <div class="fitness-level">
+                <button onclick="selectLevel(this, 'beginner')"><img src="../beginner.png" alt="beginner"></button>
+                <p>Beginner</p>
+            </div>
+            <div class="fitness-level">
+                <button onclick="selectLevel(this, 'intermediate')"><img src="../intermediate.png" alt="intermediate"></button>
+                <p>Intermediate</p>
+            </div>
+            <div class="fitness-level">
+                <button onclick="selectLevel(this, 'advanced')"><img src="../advanced.png" alt="advanced"></button>
+                <p>Advanced</p>
+            </div>
+        </div>
+        <h2 id="muscles" class="hidden">Select Muscle Groups</h2>
+        <div id="muscle-groups" class="muscle-groups hidden">
+            <div class="muscle-group">
+                <button onclick="selectMuscle(this, 'Chest')"><img src="../Chest.png" alt="Chest"></button>
+                <p>Chest</p>
+            </div>
+            <div class="muscle-group">
+                <button onclick="selectMuscle(this, 'Back')"><img src="../Back.png" alt="Back"></button>
+                <p>Back</p>
+            </div>
+            <div class="muscle-group">
+                <button onclick="selectMuscle(this, 'Arms')"><img src="../Arms.png" alt="Arms"></button>
+                <p>Arms</p>
+            </div>
+            <div class="muscle-group">
+                <button onclick="selectMuscle(this, 'Shoulders')"><img src="../Shoulders.png" alt="Shoulders"></button>
+                <p>Shoulders</p>
+            </div>
+            <div class="muscle-group">
+                <button onclick="selectMuscle(this, 'Legs')"><img src="../Legs.png" alt="Legs"></button>
+                <p>Legs</p>
+            </div>
+            <div class="muscle-group">
+                <button onclick="selectMuscle(this, 'Abs')"><img src="../Abs.png" alt="Abs"></button>
+                <p>Abs</p>
+            </div>
+        </div>
+        <button class="generate-plan" onclick="generatePlan()">Generate My Plan!</button>
+        <a href="Wishlist.html" class="wishlist-button">Wishlist</a>
+    </div>
+
+    <div class="footer">
+        <a href="Legal.html">Legal Compliance</a>
+        <a href="AboutUs.html">About Us</a>
+        <a href="TermsAndConditions.html">Terms & Conditions</a>
+        <p>&copy; 2024 Healthezz | All Rights Reserved</p>
+    </div>
+
+    <script src="../Javascript/workouts.js"></script>
+</body>
+</html>

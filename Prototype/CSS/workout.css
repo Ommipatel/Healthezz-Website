@@ -1,0 +1,134 @@
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.fitness-levels {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.fitness-levels button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.fitness-levels img {
+    width: 150px;
+    transition: transform 0.3s ease;
+}
+
+.fitness-levels img:hover {
+    transform: scale(1.1);
+}
+
+.muscle-groups {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.muscle-groups button {
+    background: none;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.muscle-groups img {
+    width:150px;
+    transform: scale(2);
+    transition: transform 0.3s ease;
+}
+
+.muscle-groups img:hover {
+    transform: scale(2.2);
+}
+
+button.active {
+    background-color: lightgrey;
+    border-radius: 15px;
+}
+
+.exercise-plan {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.exercise-plan h3 {
+    margin-bottom: 10px;
+}
+
+.exercise-plan ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.exercise-plan li {
+    margin-bottom: 5px;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+    display: flex;
+    animation: fadeIn 1.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.generate-plan {
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.wishlist-button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: blue;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.wishlist-button:hover {
+    background-color: darkslateblue;
+    transform: scale(1.1);
+}
+
+.generate-plan:hover {
+    background-color: darkred;
+    transform: scale(1.1);
+}

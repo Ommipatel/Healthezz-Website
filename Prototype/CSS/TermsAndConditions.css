@@ -1,0 +1,25 @@
+
+
+.tc {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #e6ffdd ;
+
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tc p {
+    line-height: 2.0;
+    font-size: 16px;
+}
+
+.tc p:first-letter {
+    font-size: 200%;
+    font-weight: bold;
+    float: left;
+    margin-right: 3px;
+    line-height: 1;
+    color: grey;
+}

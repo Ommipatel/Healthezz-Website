@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../CSS/Homepage.css">
+    <!--Import Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="Homepage.html"><img src="../logo.png" alt="Logo"></a>
+        <a href="Workout.html"><span>Workouts</span></a>
+        <a href="Dietary.php"><span>Dietary</span></a>
+        <a href="BMICalc.html"><span>BMI</span></a>
+        <a href="Forum.php"><span>Forum</span></a>
+        <a href ="Create_Acc.php"><img src="../user.png" alt="Logo"></a>
+    </div>
+    
+    <div class="main-content">
+        <div class="slideshow-container">
+            <img src="../HealthyFood.jpg" alt="HealthyFood">
+            <img src="../Treadmill.jpg" alt="treadmill">
+            <img src="../yoga.jpg" alt="Yoga">
+            <img src="../stretching.jpg" alt="stretching">
+        </div>
+
+        <div class="description">
+            <h2>Our Purpose</h2>
+            <p>
+                Welcome to Healthezz, a health platform dedicated to guiding individuals of all ages toward a healthier future. Our mission is to empower you with the tools and knowledge to achieve your wellness goals and enhance your physical and mental well-being.
+            </p>
+            <p>
+                We offer tailored health plans, personalized calorie and weight tracking, and detailed nutrition guides to support your journey. Our crowdsourcing forum allows you to share your fitness journey, exchange tips, and stay motivated with a supportive community.
+            </p>
+            <p>
+                At Healthezz, we aim to improve your overall wellness by helping you develop healthy daily habits and routines. Join us on the path to a healthier, happier you.
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let topIndex = 0;
+            const topImages = document.querySelectorAll('.slideshow-container img');
+            topImages.forEach((img, index) => {
+                img.style.display = 'block';
+                if (index === 0) img.classList.add('active');
+            });
+
+            setInterval(showNextTopImage, 4000);
+
+            function showNextTopImage() {
+                const currentImage = topImages[topIndex];
+                currentImage.classList.remove('active');
+
+                topIndex = (topIndex + 1) % topImages.length;
+                const nextImage = topImages[topIndex];
+                nextImage.classList.add('active');
+            }
+        });
+    </script>
+
+    <hr class="divider">
+
+    <div class="purpose">
+        <h2>Our Features</h2>
+        <div class="purpose-content">
+            <div class="p">
+                <a href ="BMICalc.html"><img src="../weightloss.jpg" alt="Weight Loss"></a>
+                <p><b>Weight Loss</b></p>
+            </div>
+            <div class="p">
+                <a href="Workout.html"><img src="../muscle.jpg" alt="Muscle Building"></a>
+                <p><b>Muscle Building</b></p>
+            </div>
+        </div>
+        <div class="purpose-content">
+            <div class="p">
+                <a href="Workout.html"><img src="../exercise.jpg" alt="Exercise Routines"></a>
+                <p><b>Exercise Routines</b></p>
+            </div>
+            <div class="p">
+                <a href="Dietary.php"><img src="../nutrition.jpg" alt="Meals & Nutrition"></a>
+                <p><b>Meals & Nutrition</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonial-container">
+        <h2>User Feedback</h2>
+
+        <div class="testimonial">
+            <p class="username">Aisha Davis</p>
+            <p class="review">This website has completely changed my fitness journey. The personalized workout plans and diet recommendations are spot on. Highly recommend!</p>
+        </div>
+        
+        <div class="testimonial">
+            <p class="username">Liam Johnson</p>
+            <p class="review">I've been using this site for a month now, and the progress I've made is incredible. The exercise videos are very helpful and easy to follow.</p>
+        </div>
+        
+        <div class="testimonial">
+            <p class="username">Sophia Martinez</p>
+            <p class="review">Absolutely love this website! The diet tips have helped me lose weight without feeling deprived. The community is also fantastic.</p>
+        </div>
+        
+        <div class="testimonial">
+            <p class="username">Rajesh Kumar</p>
+            <p class="review">Great platform for fitness enthusiasts. The tracking tools are very motivating. The website is easy to navigate and very informative.</p>
+        </div>
+        
+        <div class="testimonial">
+            <p class="username">Sienna Nguyen</p>
+            <p class="review">The variety of workouts and diet plans available is amazing. I've finally found a fitness routine that works for me. Thanks to this website, I'm fitter and healthier than ever.</p>
+        </div>
+
+        <div class="nav-buttons">
+            <button id="prev-btn">&lt;</button>
+            <button id="next-btn">&gt;</button>
+        </div>
+    </div>
+
+     <!--Carousel Auto scroll-->
+     <script>
+        let currentIndex = 0;
+        let interval;
+        const testimonials = document.querySelectorAll('.testimonial');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+        // Load first testimonial on page load
+        testimonials[0].classList.add('active');
+});
+
+        function showTestimonial(index) {
+            //Fade out current testimonial
+            testimonials[currentIndex].classList.remove('active', 'fade-in');
+            testimonials[currentIndex].classList.add('fade-out');
+
+
+            //Delay before showing next testimonial
+            setTimeout(() => {
+                testimonials[currentIndex].classList.remove('fade-out');
+                testimonials[currentIndex].style.display = 'none';
+
+                currentIndex = (index + testimonials.length) % testimonials.length;
+
+                // Show next testimonial
+                testimonials[currentIndex].style.display = 'block';
+                setTimeout(() => {
+                    testimonials[currentIndex].classList.add('active', 'fade-in');
+                }, 10); // Small delay to ensure browser loads transition
+            }, 750); // fade duration
+        }
+
+
+        function resetInterval() {
+            clearInterval(interval);
+            interval = setInterval(() => showTestimonial(currentIndex + 1), 5000); // Changes the testimonial every 5 seconds
+        }
+
+        prevBtn.addEventListener('click', () => {
+            showTestimonial(currentIndex - 1);
+            resetInterval();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            showTestimonial(currentIndex + 1);
+            resetInterval();
+        });
+
+        resetInterval(); //set initial interval
+    </script>
+
+    <div class="stats">
+        <p></p>
+        <p></p>
+    </div>
+    
+    <div class="footer">
+        <a href="Legal.html">Legal Compliance</a>
+        <a href="AboutUs.html">About Us</a>
+        <a href="TermsAndConditions.html">Terms & Conditions</a>
+        <p>&copy; 2024 Healthezz | All Rights Reserved</p>
+    </div>
+
+</body>
+</html>

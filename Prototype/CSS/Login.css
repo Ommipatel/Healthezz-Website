@@ -1,0 +1,92 @@
+.create-acc-container, .signin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.create-acc-big-container, .signin-big-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e6ffdd;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.create-acc-very-big-container, .signin-very-big-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-title, .signin-title {
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.create-acc-form, .signin-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    align-items: center;
+    font-size: 18px;
+  }
+
+  form input:not([type="submit"]), select {
+    width: 180px;
+    height: 25px;
+    font-size: 18px;
+  }
+
+  /*Submit Button*/
+  .submitButton:hover {
+    background-color: #45a049;
+  }
+  
+  .submitButton {
+    margin-top: 10px;
+    padding: 15px 25px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .welcome_session, .logged-in {
+    text-align: center;
+    margin-top: 20px;
+    background-color: beige;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .error_msg {
+    color: red;
+    text-align: center;
+  }
+
+  .account-created {
+    color:#4CAF50;
+    text-align: center;
+  }

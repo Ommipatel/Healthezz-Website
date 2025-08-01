@@ -1,0 +1,35 @@
+.aboutus {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #e6ffdd ;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.aboutus h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.aboutus h2{
+    text-align: center;
+}
+
+.aboutus p {
+    line-height: 1.8;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.aboutus ul {
+    list-style-type:circle;
+    margin: 0 0 20px 20px;
+  padding: 0%;
+}
+
+.aboutus li {
+    margin-bottom: 10px;
+}
+
+

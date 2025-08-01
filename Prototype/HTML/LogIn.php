@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../CSS/Homepage.css">
+    <link rel="stylesheet" href="../CSS/Login.css">
+    <!--Import Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="Homepage.html"><img src="../logo.png" alt="Logo"></a>
+        <a href="Workout.html"><span>Workouts</span></a>
+        <a href="Dietary.php"><span>Dietary</span></a>
+        <a href="BMICalc.html"><span>BMI</span></a>
+        <a href="Forum.php"><span>Forum</span></a>
+        <a href ="Create_Acc.php"><img src="../user.png" alt="Logo"></a>
+    </div>
+
+    <?php
+
+    session_start();
+
+    $servername = "talsprddb02.int.its.rmit.edu.au";
+    $username = "COSC3046_2402_G7";
+    $password = "8fNBpjoSuE4W";
+    $dbname = "COSC3046_2402_G7";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    if (isset($_POST['submit'])) {
+        $email = $_POST['mail'];
+        $password = $_POST['password'];
+    
+        $statement = $conn->prepare("SELECT email, password FROM User WHERE email = ?");
+        $statement->bind_param("s", $email);
+        $statement->execute();
+        $outcome = $statement->get_result();
+
+        if($outcome->num_rows>0){
+            $row = $outcome->fetch_assoc();
+            if(password_verify($password, $row['password'])){
+                $_SESSION['email'] = $row['email'];
+                echo "<div class='signin-very-big-container'>
+                    <div class='create-acc-container'>
+                    <h5 class='logged-in'>You're Logged in! Redirecting to homepage...</h5></div></div>";
+                header("refresh:3; url=Homepage.html");
+            } else {
+                echo "<h4 class='error_msg'>Incorrect password. Please Try Again.</h4>";
+            }
+        } else {
+            echo "<h4 class='error_msg'>Email not found. Please Try Again.</h4>";
+        }
+    
+        $statement->close();
+        $conn->close();
+    }  
+
+?>
+
+<div class="signin-very-big-container">
+<div class="signin-big-container">
+<div class="signin-container">
+    <div class="signin-title">
+        <h2>Sign in</h2>
+    </div>
+
+    <form class="signin-form" method="POST" action="">
+
+    <label for="mail">Email Address:</label>
+    <input type="email" id="mail" name="mail" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <input type="submit" class="submitButton" name="submit" value="Login">
+    </form>
+</div>
+</div>
+</div>
+    
+<div class="footer">
+        <a href="Legal.html">Legal Compliance</a>
+        <a href="AboutUs.html">About Us</a>
+        <a href="TermsAndConditions.html">Terms & Conditions</a>
+        <p>&copy; 2024 Healthezz | All Rights Reserved</p>
+    </div>
+</body>
+</html>
